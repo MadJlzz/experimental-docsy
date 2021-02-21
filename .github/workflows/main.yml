@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: '1'
-          submodules: 'true'
+          submodules: 'recursive'
 
       - name: Install extended Hugo (scss/saas)
         run: |
