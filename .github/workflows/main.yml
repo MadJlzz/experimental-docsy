@@ -31,3 +31,9 @@ jobs:
 
       - name: Generate public site
         run: hugo
+
+      - name: Deploy to Google AppEngine
+        uses: google-github-actions/deploy-appengine@v0.3.0
+        with:
+          project_id: ${{ secrets.GCP_PROJECT }}
+          credentials: ${{ secrets.GCP_SA_KEY }}
