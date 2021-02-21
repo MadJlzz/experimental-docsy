@@ -1,0 +1,20 @@
+runtime: go112
+handlers:
+  - url: /
+    static_files: public/index.html
+    upload: public/*
+    secure: always
+  - url: /public/ananke/dist/
+    static_dir: public/ananke/dist/*
+    mime_type: text/css
+    secure: always
+    redirect_http_response_code: 301
+  - url: /(.*)/
+    static_files: public/\1/index.html
+    upload: public/*
+    secure: always
+  - url: /
+    static_dir: public/
+    secure: always
+error_handlers:
+  - file: 404.html
